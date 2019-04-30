@@ -52,4 +52,25 @@ están situados en la carpeta "*esqueleto*" del repositorio actual:
 
 ## Paso 3. Convertir el código LaTeX en HTML
 
-(...)
+Supongamos de que el código LaTeX, figuras, etc. está en una carpeta
+llamada *Boletin-N-mes20XX*. Esta capeta estará dentro de otra más
+general, llamada por ejemplo `Boletin-SEMA" que contiene al resto de
+los boletines y ficheros relacionados para la compilación LaTeX
+(imágnees, etc).
+
+1. Fuera del sistema de control de versiones, crear una carpeta llamada,
+por ejemplo, `BoletinN-LaTeX2HTML`. Esta carpeta la utilizaremos para
+almacenar el código LaTeX y para realizar el proceso de conversión en
+HTML. Dentro de esta carpeta:
+
+	1. Copiar toda la capeta *Boletin-N-mes20XX*:
+	   ```
+	   cp -a Boletin-N-mes20XX BoletinN-LaTeX2HTML
+	   ```
+	2. Enlazar al resto del contenido, escribendo por ejemplo:
+	   ```
+	   for i in Boletin-SEMA/*; do ln -s $i; done
+
+	   ```
+	   La línea anterior dará un error porque *Boletin-N-mes20XX* ya
+       existe (perfecto) y enlazará al resto de los contenidos.
