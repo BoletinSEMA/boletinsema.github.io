@@ -13,6 +13,8 @@ En Github existe una organización llamada
 [BoletínSEMA](https://github.com/BoletinSEMA). Dentro de esta
 organización, creamos un repositorio llamado `boletinN`.
 
+Añadir a todos los colaboradores: *Settins*, *Collaborators and teams*
+
 ### Configuración del nuevo boletín:
 
 Dentro del nuevo repositorio `boletinN`, accedemos al menú *Settings* y en la sección
@@ -74,3 +76,25 @@ HTML. Dentro de esta carpeta:
 	   ```
 	   La línea anterior dará un error porque *Boletin-N-mes20XX* ya
        existe (perfecto) y enlazará al resto de los contenidos.
+	3. Editar el fichero boletinN.tex, situado dentro de la carpeta *Boletin-N-mes20XX*, y descomentar la línea
+	   ```
+	   \SaltarTikZ % Quitar el comentario para saltar todos los códigos de tikz
+	   ```
+
+
+2. Entrar en Boletin-N-mes20XX y copiar la carpeta `latex2html` que
+       está en el repositorio principal
+       *boletinsema.github.io*. Dentro de ella realizaremos todo el
+       proceso de compilción. Para prepararlo:
+
+	1. Entrar en la carpeta *latex2html* y enlazar a la carpeta de
+       figuras del boletín:
+	   ```
+	   cd latex2html
+	   ln -s ../figuras
+	   ```
+	2. Editar el fichero *Makefile* y escribir el valor adecuado en la
+       variable `NUMERO_BOLETIN`
+
+
+3. Escribir make (y cruzar los dedos). Empezará la compilación en html
