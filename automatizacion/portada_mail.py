@@ -17,6 +17,7 @@ Usage:
 %s <input directory> <output file>
 """
          % (sys.argv[0]) )
+   sys.exit(1)
 
 input_dir = sys.argv[1]
 output_file = sys.argv[2]
@@ -81,12 +82,27 @@ f_header.close()
 
 f_tmp.seek(0)
 for tmp_line in f_tmp.readlines():
+
+    # Subst local href by global web url
     input = '<a href="(\w+\.\w+)"'
     output = '<a href="' + web_root + '/' + r'\1' + '"'
 
     result = re.sub(input, output, tmp_line)    # Replace a string with a part of itself
-    f_output.write(result)
     print(result)
+
+    # Subst local href by global web url
+    input = '<img src="(\w*\/*\w+\.\w+)"'
+    output = '<img src="' + web_root + '/' + r'\1' + '"'
+
+    result = re.sub(input, output, result)    # Replace a string with a part of itself
+    print(result)
+
+    # Save to file
+
+    f_output.write(result)
+
+
+#    print(result)
 
 
 f_tmp.close()
