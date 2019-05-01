@@ -5,8 +5,11 @@ import re
 import tempfile
 
 verbosity=1
-boletin = "21"
-web_root = "https://www.sema.org.es/images/boletines/boletin%s/%s" % (boletin, boletin)
+boletin = "22"
+
+#web_root = "https://XXX"
+#web_root = "https://www.sema.org.es/images/boletines/boletin%s/%s" % (boletin, boletin)
+web_root = "https://boletinsema.github.io/boletin22"
 
 if verbosity:
     print(sys.argv)
@@ -22,6 +25,9 @@ Usage:
 input_dir = sys.argv[1]
 output_file = sys.argv[2]
 
+# 0. Insertar cabecera html en output_file
+
+
 index_hml = input_dir + "/index.html"
 sidebar_hml = input_dir + "/sidebar.html"
 header_hml = input_dir + "/header.html"
@@ -33,7 +39,7 @@ f_index = open(index_hml, "r")
 f_sidebar = open(sidebar_hml, "r")
 f_header = open(header_hml, "r")
 
-f_tmp = tempfile.TemporaryFile("w+") # Por defecto, en modo 'w+b' (lectura y escritura)
+f_tmp = open("/tmp/temporalXXX.txt", "w+") #tempfile.TemporaryFile("w+")
 f_output = open(output_file, "w")
 
 ignore_line = False
@@ -50,7 +56,6 @@ for line in f_index.readlines():
                 print(line)
             ignore_script = False
 
-
     regexp = "\s*<!--\s*SIDEBAR"
     if(re.search(regexp, line)):
         if verbosity:
@@ -58,7 +63,6 @@ for line in f_index.readlines():
         for sidebar_line in f_sidebar.readlines():
             f_tmp.write(sidebar_line)
         ignore_line = True
-
 
     regexp = "\s*<!--\s*HEADER"
     if(re.search(regexp, line)):
@@ -81,20 +85,26 @@ f_header.close()
 # 2. Eliminar referencias locales
 
 f_tmp.seek(0)
-for tmp_line in f_tmp.readlines():
+for line in f_tmp.readlines():
 
     # Subst local href by global web url
-    input = '<a href="(\w+\.\w+)"'
-    output = '<a href="' + web_root + '/' + r'\1' + '"'
+    input_re = '<a href="(\w+\.\w+)"'
+    output_re = '<a href="' + web_root + '/' + r'\1' + '"'
 
-    result = re.sub(input, output, tmp_line)    # Replace a string with a part of itself
-    print(result)
+    result= line
+    if(re.search(input_re, line)):
+        if verbosity:
+            print("   ...found <a href=")
+        result = re.sub(input_re, output_re, line)    # Replace a string with a part of itself
 
-    # Subst local href by global web url
-    input = '<img src="(\w*\/*\w+\.\w+)"'
-    output = '<img src="' + web_root + '/' + r'\1' + '"'
+    # Sust img src (maybe in the same line!)
+    input_re = '<img src="(\w+/\w+\.\w+)"'
+    output_re = '<img src="' + web_root + '/' + r'\1' + '"'
+    if(re.search(input_re, result)):
+        if verbosity:
+            print("   ...found <img src=")
+        result = re.sub(input_re, output_re, result)    # Replace a string with a part of itself
 
-    result = re.sub(input, output, result)    # Replace a string with a part of itself
     print(result)
 
     # Save to file
