@@ -88,7 +88,7 @@ f_tmp.seek(0)
 for line in f_tmp.readlines():
 
     # Subst local href by global web url
-    input_re = '<a href="(\w+\.\w+)"'
+    input_re = '<a href="([\w|-]+\.\w+)"'
     output_re = '<a href="' + web_root + '/' + r'\1' + '"'
 
     result= line
@@ -98,7 +98,7 @@ for line in f_tmp.readlines():
         result = re.sub(input_re, output_re, line)    # Replace a string with a part of itself
 
     # Sust img src (maybe in the same line!)
-    input_re = '<img src="(\w+/\w+\.\w+)"'
+    input_re = '<img src="((\w|-|/)+\.\w+)"'
     output_re = '<img src="' + web_root + '/' + r'\1' + '"'
     if(re.search(input_re, result)):
         if verbosity:
