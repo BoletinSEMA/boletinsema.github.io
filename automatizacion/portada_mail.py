@@ -3,8 +3,9 @@
 import sys
 import re
 import tempfile
+from urllib.request import urlopen
 
-verbosity=1
+verbosity=False
 boletin = "22"
 
 #web_root = "https://XXX"
@@ -45,6 +46,16 @@ f_output = open(output_file, "w")
 ignore_line = False
 ignore_script = False
 for line in f_index.readlines():
+
+    #Buscar CSS
+    regexp = '\s*<link rel="stylesheet"\s*.*\s*href="(https?://.+)"'
+    res = re.match(regexp,line)
+    if (res):
+        css = urlopen(res.group(1))
+        style = css.read().decode("utf8")
+        f_tmp.write("<style>\n"+style+"\n</style>")
+        continue
+
     if not ignore_line and not ignore_script:
         f_tmp.write(line)
     elif ignore_line:
@@ -55,7 +66,7 @@ for line in f_index.readlines():
             if verbosity:
                 print(line)
             ignore_script = False
-
+    
     regexp = "\s*<!--\s*SIDEBAR"
     if(re.search(regexp, line)):
         if verbosity:
@@ -104,8 +115,8 @@ for line in f_tmp.readlines():
         if verbosity:
             print("   ...found <img src=")
         result = re.sub(input_re, output_re, result)    # Replace a string with a part of itself
-
-    print(result)
+    if verbosity:
+        print(result)
 
     # Save to file
 
