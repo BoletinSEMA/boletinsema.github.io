@@ -93,6 +93,22 @@ HTML. Dentro de esta carpeta:
 	   cd latex2html
 	   ln -s ../figuras
 	   ```
+	1. Las figuras son muy 'pesadas'. Hay que pensar bien la forma
+	de reducirles el tamaño. Una posibilad es usar *convert* (de 
+	ImageMagic) para reducir el ancho y el alto. Otra que he usado 
+	ocasionalmente:
+		```
+		jpegoptim -s -S1000 *.jpg	
+		```
+	1. Por un motivo que aún no conozco con detalle, el conversor
+	de LaTeX en HTML necesita conocer las dimensiones de las
+	imágenes. Esto se puede hacer ejecutando, en todas las carpetas
+	que contengan figuras, la siguiente orden:
+		```
+		ebb -x *.png	
+		```
+	Esta orden generará un fichero con estensión *xbb* para cada
+	imagen, que contienen información sobre ésta (ancho, alto...)
 	2. Editar el fichero *Makefile* y escribir el valor adecuado en la
        variable `NUMERO_BOLETIN`
 
