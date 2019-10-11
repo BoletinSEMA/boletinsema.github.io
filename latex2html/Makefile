@@ -1,7 +1,7 @@
 NUMERO_BOLETIN=20
 
 all:
-	htlatex ../boletin$(NUMERO_BOLETIN)  "boletinsema,charset=utf-8,info" " -cunihtf -utf8"
+	htlatex boletin$(NUMERO_BOLETIN)  "boletinsema,charset=utf-8,info" " -cunihtf -utf8"
 
 
 clean:
