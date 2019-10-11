@@ -9,8 +9,8 @@ verbosity=False
 boletin = "22"
 
 #web_root = "https://XXX"
-#web_root = "https://www.sema.org.es/images/boletines/boletin%s/%s" % (boletin, boletin)
-web_root = "https://boletinsema.github.io/boletin22"
+web_root = "https://www.sema.org.es/images/boletines/boletin%s/%s" % (boletin, boletin)
+#web_root = "https://boletinsema.github.io/boletin22"
 
 if verbosity:
     print(sys.argv)
@@ -45,16 +45,18 @@ f_output = open(output_file, "w")
 
 ignore_line = False
 ignore_script = False
+insert_CSS=False
 for line in f_index.readlines():
 
-    #Buscar CSS
-    regexp = '\s*<link rel="stylesheet"\s*.*\s*href="(https?://.+)"'
-    res = re.match(regexp,line)
-    if (res):
-        css = urlopen(res.group(1))
-        style = css.read().decode("utf8")
-        f_tmp.write("<style>\n"+style+"\n</style>")
-        continue
+    if insert_CSS:
+        #Buscar CSS
+        regexp = '\s*<link rel="stylesheet"\s*.*\s*href="(https?://.+)"'
+        res = re.match(regexp,line)
+        if (res):
+            css = urlopen(res.group(1))
+            style = css.read().decode("utf8")
+            f_tmp.write("<style>\n"+style+"\n</style>")
+            continue
 
     if not ignore_line and not ignore_script:
         f_tmp.write(line)
@@ -66,7 +68,7 @@ for line in f_index.readlines():
             if verbosity:
                 print(line)
             ignore_script = False
-    
+
     regexp = "\s*<!--\s*SIDEBAR"
     if(re.search(regexp, line)):
         if verbosity:
@@ -99,7 +101,7 @@ f_tmp.seek(0)
 for line in f_tmp.readlines():
 
     # Subst local href by global web url
-    input_re = '<a href="([\w|-]+\.\w+)"'
+    input_re = '<a href="((\w|-|/)+\.\w+)"'
     output_re = '<a href="' + web_root + '/' + r'\1' + '"'
 
     result= line
