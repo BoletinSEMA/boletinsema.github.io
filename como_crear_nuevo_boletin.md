@@ -17,6 +17,8 @@ Añadir a todos los colaboradores: *Settins*, *Collaborators and teams*
 
 ### Configuración del nuevo boletín:
 
+**Nota**: Es posible que previamente haya que realizar el paso 2 (crear el "esqueleto" del nuevo boletín). Porque si el repositorio está todavía vació, no se podrá seleccionar *matster branch* en *Pages*.
+
 Dentro del nuevo repositorio `boletinN`, accedemos al menú *Settings* y en la sección
 **GitHub Pages**, apartado **Sources** seleccionamos *master branch*.
 
