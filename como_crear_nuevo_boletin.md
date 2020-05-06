@@ -28,7 +28,7 @@ Esto hará que el código HTML que introduzcamos en el repositorio
 ## Paso 2. Crear el "esqueleto" del nuevo boletín
 
 1. Copiar en el directorio raíz del nuevo directorio los siguientes ficheros html, que
-están situados en la carpeta "*esqueleto*" del repositorio actual:
+están situados en el directorio "***esqueleto***" del repositorio actual:
 
 	1. El fichero `index.html` (la portada del nuevo boletín)
 	2. El fichero `header.html` (la cabecera común a las páginas del nuevo boletín)
