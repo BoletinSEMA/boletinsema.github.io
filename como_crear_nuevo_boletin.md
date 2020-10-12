@@ -49,8 +49,9 @@ están situados en la carpeta "*esqueleto*" del repositorio actual:
      ocupe el pdf del Boletín N.
    * [TAREA: Automatizar esto]
 
-5. Una vez subidos todos estos cambios a Github, el esqueleto del
-   boletín será accesible en `https://boletinsema.github.io/boletinN/
+5. Subir todos estos cambios a Github
+
+6. En *Settins*, sección *Github Pages* seleccionar la rama *main*. Así se podrá ver el contenido html desde la web https://boletinsema.github.io/boletinN/
 
 ## Paso 3. Convertir el código LaTeX en HTML
 
