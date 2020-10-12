@@ -17,6 +17,8 @@ Añadir a todos los colaboradores: *Settins*, *Collaborators and teams*
 
 ### Configuración del nuevo boletín:
 
+**Nota**: Es posible que previamente haya que realizar el paso 2 (crear el "esqueleto" del nuevo boletín). Porque si el repositorio está todavía vació, no se podrá seleccionar *matster branch* en *Pages*.
+
 Dentro del nuevo repositorio `boletinN`, accedemos al menú *Settings* y en la sección
 **GitHub Pages**, apartado **Sources** seleccionamos *master branch*.
 
@@ -26,7 +28,7 @@ Esto hará que el código HTML que introduzcamos en el repositorio
 ## Paso 2. Crear el "esqueleto" del nuevo boletín
 
 1. Copiar en el directorio raíz del nuevo directorio los siguientes ficheros html, que
-están situados en la carpeta "*esqueleto*" del repositorio actual:
+están situados en el directorio "***esqueleto***" del repositorio actual:
 
 	1. El fichero `index.html` (la portada del nuevo boletín)
 	2. El fichero `header.html` (la cabecera común a las páginas del nuevo boletín)
@@ -94,12 +96,7 @@ para realizar el proceso de conversión en HTML. Desde la terminal:
 
 
 2. Realizaremos la conversión a HTML en la carpeta en la que habíamos copiado
-   las fuentes LaTeX y las figuras. Para ello, empezaremos preparando el entorno:
-
-	 0. Entrar en esta carpeta:
-	 ```
-	 cd Boletin-<N>-mes20<XX>
-	 ```
+   las fuentes LaTeX y las figuras. Suponemos que ya estamos en la capeta `Boletin-<N>-mes20<XX>`. Empezaremos preparando el entorno: 
 
 	 1. Editar el fichero boletinN.tex, situado dentro de la carpeta *Boletin-N-mes20XX*, y descomentar la línea
 	   ```
