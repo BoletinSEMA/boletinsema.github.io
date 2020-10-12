@@ -95,8 +95,7 @@ para realizar el proceso de conversión en HTML. Desde la terminal:
 		```
 
 
-2. Realizaremos la conversión a HTML en la carpeta en la que habíamos copiado
-   las fuentes LaTeX y las figuras. Suponemos que ya estamos en la capeta `Boletin-<N>-mes20<XX>`. Empezaremos preparando el entorno: 
+2. En esta carpeta `Boletin-<N>-mes20<XX>` (en la que ya habíamos copiado las fuentes LaTeX y las figuras), realizaremos la conversión a HTML.  Empezaremos preparando el entorno: 
 
 	 1. Editar el fichero boletinN.tex, situado dentro de la carpeta *Boletin-N-mes20XX*, y descomentar la línea
 	   ```
