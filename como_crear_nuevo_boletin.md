@@ -20,7 +20,7 @@ Añadir a todos los colaboradores: *Settins*, *Collaborators and teams*
 **Nota**: Es posible que previamente haya que realizar el paso 2 (crear el "esqueleto" del nuevo boletín). Porque si el repositorio está todavía vació, no se podrá seleccionar *matster branch* en *Pages*.
 
 Dentro del nuevo repositorio `boletinN`, accedemos al menú *Settings* y en la sección
-**GitHub Pages**, apartado **Sources** seleccionamos *master branch*.
+**GitHub Pages**, apartado **Sources** seleccionamos la rama (*branch*) *main* y pulsamos (*Save*).
 
 Esto hará que el código HTML que introduzcamos en el repositorio
 `boletinN` sera publicado en url `https://boletinsema.github.io/boletinN/`
@@ -53,7 +53,6 @@ están situados en el directorio "***esqueleto***" del repositorio actual:
 
 5. Subir todos estos cambios a Github
 
-6. En *Settins*, sección *Github Pages* seleccionar la rama *main*. Así se podrá ver el contenido html desde la web https://boletinsema.github.io/boletinN/
 
 ## Paso 3. Convertir el código LaTeX en HTML
 
@@ -95,7 +94,7 @@ para realizar el proceso de conversión en HTML. Desde la terminal:
 		```
 
 
-2. En esta carpeta `Boletin-<N>-mes20<XX>` (en la que ya habíamos copiado las fuentes LaTeX y las figuras), realizaremos la conversión a HTML.  Empezaremos preparando el entorno: 
+2. En esta carpeta `Boletin-<N>-mes20<XX>` (en la que ya habíamos copiado las fuentes LaTeX y las figuras), realizaremos la conversión a HTML.  Empezaremos preparando el entorno:
 
 	 1. Editar el fichero boletinN.tex, situado dentro de la carpeta *Boletin-N-mes20XX*, y descomentar la línea
 	   ```
@@ -106,7 +105,7 @@ para realizar el proceso de conversión en HTML. Desde la terminal:
 		Ésta contiene la configuración para la conversión en HTML.
 		Por ejemplo:
 	   ```
-	   cp ../../boletinsema.github.io/latex2html/* .
+	   cp ../../Boletin-Web/boletinsema.github.io/latex2html/* .
 	   ```
 	 1. Las figuras son muy 'pesadas'. Están sistuadas en distintas subcarpetas
 		 del directorio 'figuras'. Hay que pensar bien la forma
@@ -143,6 +142,10 @@ para realizar el proceso de conversión en HTML. Desde la terminal:
 	imagen, que contienen información sobre ésta (ancho, alto...). Por simplicidad,
 	he introducido esta orden en el código bash que se muestra en el apartado anterior.
 
+        1. En ocasiones, el fichero .tex contiene imágenes en formato .pdf. El conversor a HTML no parece reconocerlas. Puede ser buena idea convertirlas, por ejemplo a .png, con::
+		```
+		pdftoppm -png fichero.pdf > fichero.png
+		```
 3. Conversión en HTML:
    1. Editar el fichero *Makefile* y escribir el valor adecuado en la
        variable `NUMERO_BOLETIN`
