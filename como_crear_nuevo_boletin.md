@@ -28,7 +28,8 @@ Esto hará que el código HTML que introduzcamos en el repositorio
 ## Paso 2. Crear el "esqueleto" del nuevo boletín
 
 1. Copiar en el directorio raíz del nuevo directorio los siguientes ficheros html, que
-están situados en el directorio "***esqueleto***" del repositorio actual:
+están situados en el directorio "***esqueleto***" del repositorio actual (o, quizás mejor,
+   del último boletín, pueden estar más actualizados):
 
 	1. El fichero `index.html` (la portada del nuevo boletín)
 	2. El fichero `header.html` (la cabecera común a las páginas del nuevo boletín)
@@ -36,7 +37,8 @@ están situados en el directorio "***esqueleto***" del repositorio actual:
 
 2. Crear en el directorio raíz una carpta llamada `img` que contenga
    todas las imágenes contenidos en el directorio "*esqueleto/img*"
-   del repositorio actual
+   del repositorio actual (o, quizás mejor, los contenidos de la
+   carpeta *img* del último boletín).
 
 3. Sustituir la imagen `portada_boletin.png` por la primera página del
    fichero pdf del "Boletín N". Esta página deberá ser convertida a
