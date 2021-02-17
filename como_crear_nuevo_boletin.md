@@ -144,7 +144,7 @@ para realizar el proceso de conversión en HTML. Desde la terminal:
 	imagen, que contienen información sobre ésta (ancho, alto...). Por simplicidad,
 	he introducido esta orden en el código bash que se muestra en el apartado anterior.
 
-        1. En ocasiones, el fichero .tex contiene imágenes en formato .pdf. El conversor a HTML no parece reconocerlas. Puede ser buena idea convertirlas, por ejemplo a .png, con::
+    1. En ocasiones, el fichero .tex contiene imágenes en formato .pdf. El conversor a HTML no parece reconocerlas. Puede ser buena idea convertirlas, por ejemplo a .png, con::
 		```
 		pdftoppm -png fichero.pdf > fichero.png
 		```
