@@ -13,7 +13,7 @@ En Github existe una organización llamada
 [BoletínSEMA](https://github.com/BoletinSEMA). Dentro de esta
 organización, creamos un repositorio llamado `boletinN`.
 
-Añadir a todos los colaboradores: *Settins*, *Collaborators and teams*
+Añadir a todos los colaboradores: *Settings*, *Collaborators and teams*
 
 ### Configuración del nuevo boletín:
 
