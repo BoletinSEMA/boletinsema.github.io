@@ -132,6 +132,11 @@ para realizar el proceso de conversión en HTML. Desde la terminal:
    3. Lo normal es que aparezcan errores, debido a que se utilizan paquetes para los que
 	  la conversión en HTML no funciona correctamente.
 
+4. Una vez la compilación en HTML ha terminado, podemos eliminar los ficheros LaTeX para no exponerlos en el repositorio git:
+	```
+	rm *.tex *.aux *.log *.toc *.dvi boletinN.pdf
+	```
+	
 ## Paso 4. Copiar ficheros al repositorio de Github
 
 Para finalizar, se deben copiar los ficheros relevantes (html, imágenes, css...) al repostorio de Github. Entonces comenzará el proceso de revisión y edición manual del HTML.
