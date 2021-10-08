@@ -58,11 +58,7 @@ están situados en el directorio "***esqueleto***" del repositorio actual (o, qu
 ## Paso 3. Convertir el código LaTeX en HTML
 
 Supongamos de que el código LaTeX, figuras, etc. está en una carpeta
-llamada *Boletin-N-mes20XX*. Esta capeta estará dentro de otra más
-general, llamada por ejemplo *../../Boletin-PDF* (precisamente, esta es
-la dirección relativa en *sobolev.uca.es*)que contiene al resto de
-los boletines y ficheros relacionados para la compilación LaTeX
-(imágnees, etc).
+llamada *Boletin-NXX-mes20XX*.
 
 1. Fuera del sistema de control de versiones, crear una carpeta llamada,
 por ejemplo, `Boletin<N>-LaTeX2HTML`. Por ejemplo, `<N>' es igual a 22
