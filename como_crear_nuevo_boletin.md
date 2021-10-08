@@ -58,7 +58,7 @@ están situados en el directorio "***esqueleto***" del repositorio actual (o, qu
 ## Paso 3. Convertir el código LaTeX en HTML
 
 Supongamos de que el código LaTeX, figuras, etc. está en una carpeta
-llamada *Boletin-NXX-mes20XX*.
+con un nombre del tipo *Boletin-NXX-mes20YY*.
 
 1. Fuera del sistema de control de versiones, crear una carpeta llamada,
 por ejemplo, `Boletin<N>-LaTeX2HTML`. Por ejemplo, `<N>' es igual a 22
@@ -69,31 +69,15 @@ para realizar el proceso de conversión en HTML. Desde la terminal:
 		```
 		cd <ruta_a_la_carpeta>/Boletin<N>-LaTeX2HTML
 		```
-	1. Por simplicidad, enlazaremos al directorio que contiene todas las
-		fuentes LaTeX que ya han sido usadas para componer la versión PDF:
-		```
-		ln -s ../../Boletin-PDF
-		```
-	2. Copiar toda la capeta *Boletin-N-mes20XX*:
+	1. Copiar toda el contenido de la capeta que contiene las fuentes LaTeX y las imágenes
 	   ```
-	   cp -a Boletin-PDF/Boletin-<N>-mes20<XX> .
+	   cp -a ../Boletin-NXX-mes20YY/* .
 	   ```
-	3. Enlazar al resto del contenido, escribendo por ejemplo:
-	   ```
-	   for i in Boletin-PDF/*; do ln -s $i; done
-	   ```
-	   La línea anterior dará un error porque *Boletin-N-mes20XX* ya
-       existe (perfecto) y enlazará al resto de los contenidos.
-	4. Entrar la esta que habíamos copiado, donde haremos todo el proceso
-		de conversión de LaTeX en HTML:
-		```
-		cd Boletin-<N>-mes20<XX>
-		```
 
 
-2. En esta carpeta `Boletin-<N>-mes20<XX>` (en la que ya habíamos copiado las fuentes LaTeX y las figuras), realizaremos la conversión a HTML.  Empezaremos preparando el entorno:
+2. En esta carpeta `Boletin<N>-LaTeX2HTML`, realizaremos la conversión a HTML.  Empezaremos preparando el entorno:
 
-	 1. Editar el fichero boletinN.tex, situado dentro de la carpeta *Boletin-N-mes20XX*, y descomentar la línea
+	 1. Editar el fichero `boletinN.tex`, y descomentar la línea
 	   ```
 	   \SaltarTikZ % Quitar el comentario para saltar todos los códigos de tikz
 	   ```
@@ -111,9 +95,6 @@ para realizar el proceso de conversión en HTML. Desde la terminal:
 		 ImageMagic) para reducir el ancho y el alto. Otra que he usado
 		 ocasionalmente es jpegoptim:
 		```
-		cd figuras
-		jpegoptim -s -S1000 *.jpg
-
 		for DIR in `ls -l`
 		do
 			if test -d $DIR
@@ -128,7 +109,7 @@ para realizar el proceso de conversión en HTML. Desde la terminal:
 		done
 		cd ..
 		```
-	1. Las órdenes *ebb -x ..." se deben a lo siguiente: Por un motivo
+	1. Las órdenes *ebb -x ..." anteriores se deben a lo siguiente: Por un motivo
 	que aún no conozco con detalle, el conversor de LaTeX en HTML
 	necesita conocer las dimensiones de las imágenes. Esto se puede
 	hacer ejecutando, en todas las carpetas que contengan figuras, la
