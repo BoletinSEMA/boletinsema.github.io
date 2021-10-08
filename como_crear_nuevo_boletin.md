@@ -9,20 +9,16 @@ Suponemos que vamos a generar el "Boletín N".
 
 ## Paso 1. Crear un nuevo repositorio en Github
 
-En Github existe una organización llamada
+- En Github existe una organización llamada
 [BoletínSEMA](https://github.com/BoletinSEMA). Dentro de esta
 organización, creamos un repositorio llamado `boletinN`.
 
-Añadir a todos los colaboradores: *Settings*, *Collaborators and teams*
+- Añadimos a este nuevo repositorio, `boletinN`, todos los colaboradores para que tengan permiso de edición (*writting*). Esto lo podemos hacer desde *Settings*, *Manage access* (menú a la izquierda)
 
-### Configuración del nuevo boletín:
+- Dentro del nuevo repositorio `boletinN`, accedemos al menú *Settings* y en la sección
+**Pages** (menú a la izquierda), apartado **Sources** seleccionamos la rama (*branch*) *main* y pulsamos (*Save*).
 
-**Nota**: Es posible que previamente haya que realizar el paso 2 (crear el "esqueleto" del nuevo boletín). Porque si el repositorio está todavía vació, no se podrá seleccionar *matster branch* en *Pages*.
-
-Dentro del nuevo repositorio `boletinN`, accedemos al menú *Settings* y en la sección
-**GitHub Pages**, apartado **Sources** seleccionamos la rama (*branch*) *main* y pulsamos (*Save*).
-
-Esto hará que el código HTML que introduzcamos en el repositorio
+Después del último punto, el código HTML que introduzcamos en el repositorio
 `boletinN` sera publicado en url `https://boletinsema.github.io/boletinN/`
 
 ## Paso 2. Crear el "esqueleto" del nuevo boletín
