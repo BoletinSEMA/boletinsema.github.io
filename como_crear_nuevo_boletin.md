@@ -97,6 +97,7 @@ para realizar el proceso de conversión en HTML. Desde la terminal:
 	   ```
 	   \SaltarTikZ % Quitar el comentario para saltar todos los códigos de tikz
 	   ```
+	 1. Para asegurarnos de que todo funciona correctamente, compilar y generar el fichero pdf: `pdflatex boletinNN.tex`. Si hay errores, deberemos corregirlos antes de comenzar a convertir en html.
 	 1. Copiar al directorio de trabajo el contenido de la carpeta llamada `latex2html`
 		que está en el repositorio principal *boletinsema.github.io*.
 		Ésta contiene la configuración para la conversión en HTML.
