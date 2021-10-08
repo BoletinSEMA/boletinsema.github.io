@@ -38,9 +38,12 @@ están situados en el directorio "***esqueleto***" del repositorio actual (o, qu
 
 3. Sustituir la imagen `portada_boletin.png` por la primera página del
    fichero pdf del "Boletín N". Esta página deberá ser convertida a
-   png, por ejemplo usando *Gimp* [TAREA: Automatizar esto, por
-   ejemplo usando *Imagemagic*]. Como orientación, la imagen de
-   portada en la web del Boletín 20 tiene _339 x 480 píxeles_.
+   png, por ejemplo usando *Gimp* (TAREA: Automatizar esto, por
+   ejemplo usando *Imagemagic*]. Como orientación, habitualmente usamos una imagen 
+   con _340 x 480 píxeles_. Además, habrá que extraer la primera página del boletín
+   (por ejemplo, imprimir a un archivo) <a un fichero llamado `portada.pdf`.
+   
+3. Del mismo modo, crear los fichreos `contraportada_boletin.png` y `contraportada.pdf`.
 
 4. Editar el fichero `header.html` y:
    * sustituir la expresión *Número N, MES AÑO" por el número, el mes
