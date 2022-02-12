@@ -61,13 +61,13 @@ Supongamos de que el código LaTeX, figuras, etc. está en una carpeta
 con un nombre del tipo *Boletin-NXX-mes20YY*.
 
 1. Fuera del sistema de control de versiones, crear una carpeta llamada,
-por ejemplo, `Boletin<N>-LaTeX2HTML`. Por ejemplo, `<N>' es igual a 22
+por ejemplo, `LaTeX2HTML-BoletinN`. Por ejemplo, `<N>' es igual a 22
 para el número 22. Esta carpeta la utilizaremos para almacenar el código LaTeX y
 para realizar el proceso de conversión en HTML. Desde la terminal:
 
 	0. Situarse en esta carpeta.
 		```
-		cd <ruta_a_la_carpeta>/Boletin<N>-LaTeX2HTML
+		cd <ruta_a_la_carpeta>/LaTeX2HTML-BoletinN
 		```
 	1. Copiar toda el contenido de la capeta que contiene las fuentes LaTeX y las imágenes
 	   ```
@@ -117,10 +117,7 @@ para realizar el proceso de conversión en HTML. Desde la terminal:
 		```
 		ebb -x *.png
 		```
-	Esta orden generará un fichero con estensión *xbb* para cada
-	imagen, que contienen información sobre ésta (ancho, alto...). Por simplicidad,
-	he introducido esta orden en el código bash que se muestra en el apartado anterior.
-
+	Esta orden generará un fichero con estensión *xbb* para cada imagen, que contienen información sobre ésta (ancho, alto...). Por simplicidad, he introducido esta orden en el código bash que se muestra en el apartado anterior.
     1. En ocasiones, el fichero .tex contiene imágenes en formato .pdf. El conversor a HTML no parece reconocerlas. Puede ser buena idea convertirlas, por ejemplo a .png, con::
 		```
 		pdftoppm -png fichero.pdf > fichero.png
