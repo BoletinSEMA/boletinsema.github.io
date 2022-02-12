@@ -13,7 +13,7 @@ Suponemos que vamos a generar el "Boletín N".
 [BoletínSEMA](https://github.com/BoletinSEMA). Dentro de esta
 organización, creamos un repositorio llamado `boletinN`.
 
-- Añadimos a este nuevo repositorio, `boletinN`, todos los colaboradores para que tengan permiso de edición (*writting*). Esto lo podemos hacer desde *Settings*, *Manage access* (menú a la izquierda)
+- [*¿Es esto necesario, los colaboradores no tienen acceso por defecto?*] Añadimos a este nuevo repositorio, `boletinN`, todos los colaboradores para que tengan permiso de edición (*writting*). Esto lo podemos hacer desde *Settings*, *Collaborators and teams* (menú `...` a la derecha)
 
 - Dentro del nuevo repositorio `boletinN`, accedemos al menú *Settings* y en la sección
 **Pages** (menú a la izquierda), apartado **Sources** seleccionamos la rama (*branch*) *main* y pulsamos (*Save*).
@@ -31,7 +31,7 @@ están situados en el directorio "***esqueleto***" del repositorio actual (o, qu
 	2. El fichero `header.html` (la cabecera común a las páginas del nuevo boletín)
 	3. El fichero `sidebar.html` (la columna que aparecerá a la izquierda en las páginas del nuevo boletín)
 
-2. Crear en el directorio raíz una carpta llamada `img` que contenga
+2. Crear en el directorio raíz una carpeta llamada `img` que contenga
    todas las imágenes contenidos en el directorio "*esqueleto/img*"
    del repositorio actual (o, quizás mejor, los contenidos de la
    carpeta *img* del último boletín).
