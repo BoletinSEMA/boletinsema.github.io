@@ -69,7 +69,6 @@ para realizar el proceso de conversión en HTML. Desde la terminal:
 		```
 		cd <ruta_a_la_carpeta>/LaTeX2HTML-BoletinN
 		```
-	1. **Compilar** el fichero `boletinN.tex`. Probablemente haya muchos errores, imágenes perdidas, etc. Pero hay que arreglarlo: si no compila el LaTeX a pdf, difícilmente compilará a HTML. Posiblemente, cuando todo funcione, se desee eliminar los ficheros de compilación, por ejemplo con `latexmk -c boletinN`.
  	2. Copiar toda el contenido de la capeta que contiene las fuentes LaTeX y las imágenes
 	   ```
 	   cp -a ../Boletin-NXX-mes20YY/* .
@@ -82,7 +81,7 @@ para realizar el proceso de conversión en HTML. Desde la terminal:
 	   ```
 	   \SaltarTikZ % Quitar el comentario para saltar todos los códigos de tikz
 	   ```
-	 1. Para asegurarnos de que todo funciona correctamente, compilar y generar el fichero pdf: `pdflatex boletinNN.tex`. Si hay errores, deberemos corregirlos antes de comenzar a convertir en html.
+	 1. Para asegurarnos de que todo funciona correctamente, **compilar y generar el fichero pdf**: `pdflatex boletinNN.tex`. Si hay errores, deberemos corregirlos antes de comenzar a convertir en html.
 	 1. Copiar al directorio de trabajo el contenido de la carpeta llamada `latex2html`
 		que está en el repositorio principal *boletinsema.github.io*.
 		Ésta contiene la configuración para la conversión en HTML.
