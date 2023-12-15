@@ -69,7 +69,8 @@ para realizar el proceso de conversión en HTML. Desde la terminal:
 		```
 		cd <ruta_a_la_carpeta>/LaTeX2HTML-BoletinN
 		```
-	1. Copiar toda el contenido de la capeta que contiene las fuentes LaTeX y las imágenes
+	1. **Compilar** el fichero `boletinN.tex`. Probablemente haya muchos errores, imágenes perdidas, etc. Pero hay que arreglarlo: si no compila el LaTeX a pdf, difícilmente compilará a HTML. Posiblemente, cuando todo funcione, se desee eliminar los ficheros de compilación, por ejemplo con `latexmk -c boletinN`.
+ 	2. Copiar toda el contenido de la capeta que contiene las fuentes LaTeX y las imágenes
 	   ```
 	   cp -a ../Boletin-NXX-mes20YY/* .
 	   ```
